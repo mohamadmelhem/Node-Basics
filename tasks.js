@@ -80,6 +80,7 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+// help print the description about the command
 function List(){
   console.log('hello to say hello \n quit or exit to close the application')
 }
