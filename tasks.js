@@ -37,11 +37,11 @@ function onDataReceived(text) {
   if (text === 'quit\n' || text === 'exit\n') {
     quit();
   }
-  else if(text.trim().split(" ")){
+  else if(text.trim().split(" ")[0]==="hello"){
     hello(text.trim().substring(5));
   }
   else if(text === 'help\n'){
-    List()
+    help();
   }
   else{
     unknownCommand(text);
@@ -80,9 +80,11 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
-// help print the description about the command
-function List(){
-  console.log('hello to say hello \n quit or exit to close the application')
+/* help print the description about the command
+ * @returns {void}
+ */
+function help(){
+  console.log('hello + name to say "hello name!" \nquit or exit to close the application');
 }
 
 // The following line starts the application
