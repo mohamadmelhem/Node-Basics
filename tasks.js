@@ -80,6 +80,9 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+function List(){
+  console.log('hello to say hello \n quit or exit to close the application')
+}
 
 // The following line starts the application
 startApp("mohamad melhem")
