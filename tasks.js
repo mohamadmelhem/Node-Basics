@@ -50,6 +50,10 @@ function onDataReceived(text) {
   else if(text.startsWith('add')){
     add(text)
   }
+  else if(text.startsWith('remove')){
+    remove(text)
+
+  }
   else{
     unknownCommand(text);
   }
@@ -102,6 +106,18 @@ function add(text){
     else {
       List.push(text.slice(3).trim())
       console.log('added')
+    }
+  }
+  // remove
+  function remove(text){
+    if (text.slice(6).trim() == ""){
+      List.pop
+    }
+    else if(parseInt(text.substring(6))>List.length){
+      console.log ("error")
+    }
+     else {
+         List.splice(parseInt(text.substring(6))-1,1)
     }
   }
 
