@@ -43,6 +43,9 @@ function onDataReceived(text) {
   else if(text === 'help\n'){
     help();
   }
+  else if(text === 'list\n'){
+    list()
+  }
   else{
     unknownCommand(text);
   }
@@ -68,6 +71,12 @@ function unknownCommand(c){
  */
 function hello(text){
   console.log('hello'+text+'!')
+}
+let List= ["task1" , "task2" , "task3"]
+function list() {
+List.map((index)=>{
+  console.log(`${List.indexOf(index)+1}-${index}`)
+})
 }
 
 
