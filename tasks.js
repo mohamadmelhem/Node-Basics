@@ -30,7 +30,8 @@ function startApp(name){
  * The text received would be "batata"
  * This function  then directs to other functions
  * 
- * @param  {string} text data typed by the user
+ * @param  {string} text  data typed by the user
+ * 
  * @returns {void}
  */
 function onDataReceived(text) {
@@ -45,6 +46,9 @@ function onDataReceived(text) {
   }
   else if(text === 'list\n'){
     list()
+  }
+  else if(text.startsWith('add')){
+    add(text)
   }
   else{
     unknownCommand(text);
@@ -72,6 +76,7 @@ function unknownCommand(c){
 function hello(text){
   console.log('hello'+text+'!')
 }
+
 let List= ["task1" , "task2" , "task3"]
 function list() {
 List.map((index)=>{
@@ -89,6 +94,17 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+// add
+function add(text){
+  if(text.slice(3).trim() == ""){
+    console.log('error')
+  }
+    else {
+      List.push(text.slice(3).trim())
+      console.log('added')
+    }
+  }
+
 /* help print the description about the command
  * @returns {void}
  */
