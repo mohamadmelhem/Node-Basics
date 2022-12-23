@@ -125,7 +125,7 @@ function add(text){
  * @returns {void}
  */
 function help(){
-  console.log('hello + name to say "hello name!" \nquit or exit to close the application');
+  console.log('hello + name to say "hello name!" \nquit or exit to close the application \nlist is array \nadd to add elment to array \nremove to remove element from array');
 }
 
 // The following line starts the application
