@@ -60,6 +60,12 @@ function onDataReceived(text) {
     }
     edit(text)
   }
+
+else if(text.startsWith('check')){
+  check(text)
+}else if(text.startsWith('uncheck')){
+  uncheck(text)}
+
   else{
     unknownCommand(text);
   }
@@ -120,6 +126,7 @@ function add(text){
   }
     else {
       List.push(text.slice(3).trim())
+      List.push({list:text.slice(3).trim(),done:false})
       console.log('added')
     }
   }
@@ -147,6 +154,21 @@ function add(text){
       List[List.length -1] = n;
     }
   }
+  // chek
+  function check(text){
+    if(text.slice(5).trim()==""){
+      console.log("error")
+    }else{
+      List[parseInt(text.slice(6).trim())-1].done =true;
+    }
+  }
+  //uncheck function
+  function uncheck(text){
+    if(text.slice(7).trim()==""){
+      console.log("error")
+    }else{
+      List[parseInt(text.slice(8).trim())-1].done =false;
+    }}
 /* help print the description about the command
  * @returns {void}
  */
