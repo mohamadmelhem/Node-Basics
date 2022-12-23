@@ -54,6 +54,12 @@ function onDataReceived(text) {
     remove(text)
 
   }
+  else if(text.startsWith('edit')){
+    if(text==="edit\n"){
+      console.log("error")
+    }
+    edit(text)
+  }
   else{
     unknownCommand(text);
   }
@@ -120,7 +126,18 @@ function add(text){
          List.splice(parseInt(text.substring(6))-1,1)
     }
   }
-
+  // eddit
+  function edit(text){
+    let n = text.trim().split(" ").slice(1);
+    if(Number.isInteger(parseInt(n[0]))){
+      List[parseInt(n[0] -1 )] = n.slice(1).join(" ");
+    } 
+    
+    else {
+      n = n.join(" ");
+      List[List.length -1] = n;
+    }
+  }
 /* help print the description about the command
  * @returns {void}
  */
