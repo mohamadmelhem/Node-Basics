@@ -87,11 +87,20 @@ function hello(text){
   console.log('hello'+text+'!')
 }
 
-let List= ["task1" , "task2" , "task3"]
+let List= [{list : "task1" , done : true}, 
+           {list : "task2" , done : false}, 
+           {list : "task3" , done : true}]
 function list() {
-List.map((index)=>{
-  console.log(`${List.indexOf(index)+1}-${index}`)
-})
+for (let i = 0; i < List.length; i++) {
+  if(List[i].done){
+    console.log("[+]" + ":" + List[i].list)
+    
+  }
+  else{
+    console.log("[]" + ":" + List[i].list)
+  }
+  
+}
 }
 
 
